@@ -11,6 +11,7 @@
 sqlite3 --version
 ```
 
+---
 
 ### 1.2.3 macOS 환경에서 SQLite 설치하기
 
@@ -48,6 +49,7 @@ brew install sqlite
 sqlite3 --version
 ```
 
+---
 
 ### 1.3.2 윈도우 환경에서 DB Browser for SQLite 설치하기
 
@@ -55,6 +57,7 @@ sqlite3 --version
 
 - DB Browser for SQLite 공식 다운로드 페이지: [https://sqlitebrowser.org/dl/#windows](https://sqlitebrowser.org/dl/#windows)
 
+---
 
 ### 1.3.3 macOS 환경에서 DB Browser for SQLite 설치하기
 
