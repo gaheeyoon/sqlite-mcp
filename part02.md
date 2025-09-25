@@ -96,19 +96,19 @@ uvx --version
 
 ### 2.2.6 MCP 설정 파일에 환경 정보 추가하기
 
-- 예제 파일: [ch02/book_sales_info.db](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/ch02/book_sales_info.db)
+- 예제 파일: [ch02/book_sales_info.db](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/part02/book_sales_info.db)
 
 ---
 
 ### 2.3.1 데이터 준비하기
 
-- 예제 파일: [ch02/bank_statements.xlsx](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/ch02/bank_statements.xlsx)
+- 예제 파일: [ch02/bank_statements.xlsx](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/part02/bank_statements.xlsx)
 
 ---
 
 ### 2.3.2 데이터 입력하기
 
-- 예제 파일: [ch02/bank_statements.csv](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/ch02/bank_statements.csv)
+- 예제 파일: [ch02/bank_statements.csv](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/part02/bank_statements.csv)
 
 
 #### 79쪽, Claude Desktop으로 직접 업로드하기
@@ -157,7 +157,7 @@ bank_statements 테이블의 ‘입금’, ‘출금’ 칼럼 합계 금액을 
 
 ### 2.4.1 데이터 입력하기
 
-- 예제 파일: [ch02/손익계산서_sample.pdf](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/ch02/%E1%84%89%E1%85%A9%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A5_sample.pdf)
+- 예제 파일: [ch02/손익계산서_sample.pdf](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/part02/%E1%84%89%E1%85%A9%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A5_sample.pdf)
 
 
 #### 97쪽, PDF 업로드 및 프롬프트 입력
@@ -267,7 +267,7 @@ ORDER BY 연도;
 
 #### 112쪽, Claude를 활용한 구조 변환
 
-- 예제 파일: [ch02/apartment_index.xlsx](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/ch02/apartment_index.xlsx)
+- 예제 파일: [ch02/apartment_index.xlsx](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/part02/apartment_index.xlsx)
 - 
 ```
 업로드한 apartment_index.xlsx 파일에 있는 데이터를 다음 조건에 따라서 데이터베이스에 입력해주세요.
@@ -279,7 +279,7 @@ ORDER BY 연도;
 
 #### 113쪽, CSV 파일로 변환 요청하기 
 
-- 예제 파일: [ch02/apartment_index_transformed.csv]([https://github.com/gaheeyoon/mcp-vibecoding/blob/main/ch02/apartment_index.xlsx](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/ch02/apartment_index_transformed.csv))
+- 예제 파일: [ch02/apartment_index_transformed.csv]([https://github.com/gaheeyoon/mcp-vibecoding/blob/main/part02/apartment_index.xlsx](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/part02/apartment_index_transformed.csv))
 
 ```
 업로드한 apartment_index.xlsx 파일에 있는 데이터를 테이블에 입력하기 위한 형태로 바꾸려고 합니다.
