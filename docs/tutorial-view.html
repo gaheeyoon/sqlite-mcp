@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 영상 - SQLite, MCP, 바이브 코딩</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+        
+        .breadcrumb {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 50px;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+        
+        .breadcrumb-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .breadcrumb a:hover {
+            color: #5a6fd8;
+        }
+        
+        .breadcrumb span {
+            color: #adb5bd;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 16px;
+            color: #6c757d;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 50px;
+            font-size: 16px;
+            color: #dc3545;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #f5c6cb;
+            margin-bottom: 30px;
+        }
+        
+        .content {
+            min-width: 700px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+            margin-bottom: 60px;
+            overflow: hidden;
+        }
+        
+        .page-header {
+            margin-bottom: 30px;
+            padding: 30px 20px 0 20px;
+        }
+        
+        .part-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+        
+        .page-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        
+        .page-info {
+            font-size: 14px;
+            color: #868e96;
+            font-weight: 500;
+        }
+        
+        .video-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin-bottom: 20px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        .video-info {
+            text-align: center;
+            color: #6c757d;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+            padding: 20px 30px;
+            margin-bottom: 40px;
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid #667eea;
+            border-radius: 6px;
+            background: white;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .nav-btn.disabled {
+            color: #adb5bd;
+            border-color: #dee2e6;
+            cursor: not-allowed;
+        }
+        
+        .nav-btn.disabled:hover {
+            background: white;
+            color: #adb5bd;
+        }
+        
+        .nav-btn.prev::before {
+            content: "←";
+            margin-right: 8px;
+        }
+        
+        .nav-btn.next::after {
+            content: "→";
+            margin-left: 8px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            background: white;
+            transition: all 0.2s ease;
+        }
+        
+        .back-link:hover {
+            color: #495057;
+            border-color: #adb5bd;
+        }
+        
+        .back-link::before {
+            content: "≡";
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #adb5bd;
+            font-size: 14px;
+            border-top: 1px solid #e9ecef;
+            background: white;
+            margin-top: auto;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+        
+        .footer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .breadcrumb {
+                padding: 16px 0;
+                margin-bottom: 30px;
+            }
+            
+            .breadcrumb-container {
+                padding: 0 16px;
+            }
+            
+            .footer-container {
+                padding: 0 16px;
+            }
+            
+            .page-title {
+                font-size: 20px;
+            }
+            
+            .video-section {
+                padding: 20px;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <div class="breadcrumb-container">
+                <a href="./index.html">홈</a>
+                <span>/</span>
+                <a href="./tutorial.html">실습 영상</a>
+                <span>/</span>
+                <span id="breadcrumb-title">로딩 중...</span>
+            </div>
+        </nav>
+
+        <div id="loading" class="loading">
+            영상을 불러오는 중입니다...
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            요청하신 페이지를 찾을 수 없습니다.
+        </div>
+
+        <div id="content" class="content" style="display: none;">
+            <div class="page-header">
+                <div id="part-number" class="part-number"></div>
+                <h1 id="page-title" class="page-title"></h1>
+                <div id="page-info" class="page-info"></div>
+            </div>
+
+            <div class="video-section">
+                <div class="video-container">
+                    <iframe id="video-frame" 
+                        title="실습 영상"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    단계별 실습 과정을 영상으로 확인해보세요.
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation" id="navigation" style="display: none;">
+                <a href="#" id="prev-btn" class="nav-btn prev disabled">이전 영상</a>
+                <a href="./tutorial.html" class="back-link">목록으로</a>
+                <a href="#" id="next-btn" class="nav-btn next disabled">다음 영상</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; 2025 SQLite, MCP, 바이브 코딩을 활용한 데이터 분석과 업무 자동화. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let tutorialData = null;
+        let currentTutorial = null;
+        let currentIndex = -1;
+
+        // URL 파라미터 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const requestedPage = parseInt(urlParams.get('page'));
+
+        // 페이지 요소들
+        const loadingEl = document.getElementById('loading');
+        const errorEl = document.getElementById('error');
+        const contentEl = document.getElementById('content');
+        const breadcrumbTitle = document.getElementById('breadcrumb-title');
+        const partNumber = document.getElementById('part-number');
+        const pageTitle = document.getElementById('page-title');
+        const pageInfo = document.getElementById('page-info');
+        const videoFrame = document.getElementById('video-frame');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        // JSON 데이터 로드
+        async function loadTutorialData() {
+            try {
+                const response = await fetch('./tutorial-data.json');
+                tutorialData = await response.json();
+                
+                findAndDisplayTutorial();
+            } catch (error) {
+                showError();
+            }
+        }
+
+        // 튜토리얼 찾기 및 표시
+        function findAndDisplayTutorial() {
+            if (!requestedPage) {
+                showError();
+                return;
+            }
+
+            currentIndex = tutorialData.tutorials.findIndex(tutorial => tutorial.page === requestedPage);
+            
+            if (currentIndex === -1) {
+                showError();
+                return;
+            }
+
+            currentTutorial = tutorialData.tutorials[currentIndex];
+            displayTutorial();
+        }
+
+        // 튜토리얼 표시
+        function displayTutorial() {
+            // 브레드크럼 업데이트
+            breadcrumbTitle.textContent = currentTutorial.title;
+            
+            // 페이지 헤더 업데이트
+            partNumber.textContent = currentTutorial.part;
+            pageTitle.textContent = currentTutorial.title;
+            pageInfo.textContent = `${currentTutorial.page}쪽`;
+            
+            // 비디오 URL 설정
+            videoFrame.src = currentTutorial.url;
+            videoFrame.title = currentTutorial.title;
+            
+            // 페이지 제목 업데이트
+            document.title = `${currentTutorial.title} - SQLite, MCP, 바이브 코딩`;
+            
+            // 내비게이션 버튼 설정
+            setupNavigation();
+            
+            // 내비게이션과 내용 표시
+            const navigationEl = document.getElementById('navigation');
+            loadingEl.style.display = 'none';
+            errorEl.style.display = 'none';
+            contentEl.style.display = 'block';
+            navigationEl.style.display = 'flex';
+        }
+
+        // 내비게이션 버튼 설정
+        function setupNavigation() {
+            // 이전 버튼
+            if (currentIndex > 0) {
+                const prevTutorial = tutorialData.tutorials[currentIndex - 1];
+                prevBtn.href = `./tutorial-view.html?page=${prevTutorial.page}`;
+                prevBtn.classList.remove('disabled');
+            } else {
+                prevBtn.href = '#';
+                prevBtn.classList.add('disabled');
+            }
+
+            // 다음 버튼
+            if (currentIndex < tutorialData.tutorials.length - 1) {
+                const nextTutorial = tutorialData.tutorials[currentIndex + 1];
+                nextBtn.href = `./tutorial-view.html?page=${nextTutorial.page}`;
+                nextBtn.classList.remove('disabled');
+            } else {
+                nextBtn.href = '#';
+                nextBtn.classList.add('disabled');
+            }
+        }
+
+        // 에러 표시
+        function showError() {
+            loadingEl.style.display = 'none';
+            errorEl.style.display = 'block';
+            contentEl.style.display = 'none';
+            breadcrumbTitle.textContent = '페이지를 찾을 수 없음';
+        }
+
+        // 비활성화된 버튼 클릭 방지
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('disabled')) {
+                e.preventDefault();
+            }
+        });
+
+        // 페이지 로드 시 실행
+        loadTutorialData();
+    </script>
+</body>
+</html>

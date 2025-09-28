@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크/프롬프트/참고자료 - SQLite, MCP, 바이브 코딩</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+        
+        .breadcrumb {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 50px;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+        
+        .breadcrumb-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .breadcrumb a:hover {
+            color: #5a6fd8;
+        }
+        
+        .breadcrumb span {
+            color: #adb5bd;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            letter-spacing: -0.5px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            background: white;
+            margin-bottom: 40px;
+            transition: all 0.2s ease;
+        }
+        
+        .back-link:hover {
+            color: #495057;
+            border-color: #adb5bd;
+        }
+        
+        .back-link::before {
+            content: "←";
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .content {
+            min-width: 700px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+            margin-bottom: 60px;
+        }
+        
+        .part-item {
+            display: block;
+            padding: 24px 30px;
+            border-bottom: 1px solid #f1f3f4;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.2s ease;
+            position: relative;
+        }
+        
+        .part-item:last-child {
+            border-bottom: none;
+        }
+        
+        .part-item:hover {
+            background-color: #fafbfc;
+        }
+        
+        .part-item::after {
+            content: "→";
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #adb5bd;
+            font-size: 18px;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+        
+        .part-item:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) translateX(4px);
+        }
+        
+        .part-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        
+        .part-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            line-height: 1.4;
+            margin-bottom: 4px;
+            padding-right: 40px;
+        }
+        
+        .part-page {
+            font-size: 13px;
+            color: #868e96;
+            font-weight: 500;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #adb5bd;
+            font-size: 14px;
+            border-top: 1px solid #e9ecef;
+            background: white;
+            margin-top: auto;
+            width: 100vw;
+            position: fixed;
+            bottom: 0px;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+        
+        .footer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .header {
+                padding: 40px 0;
+                margin-bottom: 30px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .breadcrumb {
+                padding: 16px 0;
+                margin-bottom: 30px;
+            }
+            
+            .breadcrumb-container {
+                padding: 0 16px;
+            }
+            
+            .content {
+                min-width: auto;
+            }
+
+            .footer-container {
+                padding: 0 16px;
+            }
+            
+            .part-item {
+                padding: 20px;
+            }
+            
+            .part-item::after {
+                right: 20px;
+            }
+            
+            .part-title {
+                font-size: 15px;
+                padding-right: 30px;
+            }
+            
+            .back-link {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <div class="breadcrumb-container">
+                <a href="./index.html">홈</a>
+                <span>/</span>
+                <span>링크,프롬프트,참고자료</span>
+            </div>
+        </nav>
+
+        <div class="container">
+            <main class="content">
+            <a href="https://github.com/gaheeyoon/sqlite-mcp/blob/main/prompt/part01.md" target="_blank" class="part-item">
+                <div class="part-number">PART 01</div>
+                <div class="part-title">데이터베이스 시작하기: 기본 개념부터 개발 환경 구축까지</div>
+                <div class="part-page">2쪽</div>
+            </a>
+            
+            <a href="https://github.com/gaheeyoon/sqlite-mcp/blob/main/prompt/part02.md" target="_blank" class="part-item">
+                <div class="part-number">PART 02</div>
+                <div class="part-title">SQLite MCP로 다양한 데이터 분석 업무 자동화하기</div>
+                <div class="part-page">44쪽</div>
+            </a>
+            
+            <a href="https://github.com/gaheeyoon/sqlite-mcp/blob/main/prompt/part03.md" target="_blank" class="part-item">
+                <div class="part-number">PART 03</div>
+                <div class="part-title">SQLite MCP로 판매 정보 조회 시스템 만들기</div>
+                <div class="part-page">126쪽</div>
+            </a>
+            
+            <a href="https://github.com/gaheeyoon/sqlite-mcp/blob/main/prompt/part04.md" target="_blank" class="part-item">
+                <div class="part-number">PART 04</div>
+                <div class="part-title">인세 내역 조회부터 이메일 발송까지 원클릭 자동화 시스템 만들기</div>
+                <div class="part-page">184쪽</div>
+            </a>
+                    </main>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; 2025 SQLite, MCP, 바이브 코딩을 활용한 데이터 분석과 업무 자동화. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
