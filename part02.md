@@ -86,6 +86,45 @@ uvx --version
 
 ---
 
+### 2.2.6 MCP 설정 파일에 환경 정보 추가하기
+
+#### 69쪽, 윈도우용 설정 파일
+
+```
+{
+    "mcpServers": {
+        "sqlite": {
+            "command": "uvx",
+            "args": [
+                "mcp-server-sqlite",
+                "--db-path",
+                "C:/sqlite/book_sales_info.db"
+            ]
+        }
+    }
+}
+```
+
+
+#### 69쪽, macOS용 설정 파일
+
+```
+{
+    "mcpServers": {
+        "sqlite": {
+            "command": "uvx",
+            "args": [
+                "mcp-server-sqlite",
+                "--db-path",
+                "/Users/username/book_sales_info.db"
+            ]
+        }
+    }
+}
+```
+
+---
+
 ### 2.2.5 Claude Desktop 앱 설치하기
 
 #### 65쪽, Claude Desktop 다운로드 페이지
