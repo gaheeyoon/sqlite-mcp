@@ -66,3 +66,9 @@ sqlite3 --version
 - DB Browser for SQLite 공식 다운로드 페이지: [https://sqlitebrowser.org/
 dl/#macos](https://sqlitebrowser.org/
 dl/#macos)
+
+#### 39쪽, DB Browser for SQLite 설치하기
+
+```
+brew install --cask db-browser-for-sqlite
+```
