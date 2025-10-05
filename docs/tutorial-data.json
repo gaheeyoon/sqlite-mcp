@@ -28,13 +28,13 @@
       "part": "PART 01",
       "title": "1.3.4 DB Browser for SQLite의 화면 구성",
       "page": 39,
-      "url": "https://www.youtube.com/embed/VIDEO_ID_39"
+      "url": "https://www.youtube.com/embed/f-2CFRa7SW4"
     },
     {
       "part": "PART 01",
       "title": "1.3.5 DB Browser for SQLite에서 새 데이터베이스 추가하기",
       "page": 41,
-      "url": "https://www.youtube.com/embed/VIDEO_ID_41"
+      "url": "https://www.youtube.com/embed/lyuEQnE432E"
     },
     {
       "part": "PART 02",
@@ -71,6 +71,48 @@
       "title": "2.2.6 MCP 설정 파일에 환경 정보 추가하기",
       "page": 65,
       "url": "https://www.youtube.com/embed/VIDEO_ID_65"
+    },
+    {
+      "part": "PART 02",
+      "title": "2.3.1 데이터 준비하기",
+      "page": 74,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_74"
+    },
+    {
+      "part": "PART 02",
+      "title": "2.3.2 데이터 입력하기",
+      "page": 77,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_77"
+    },
+    {
+      "part": "PART 02",
+      "title": "2.3.3 데이터 조회하기",
+      "page": 87,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_87"
+    },
+    {
+      "part": "PART 02",
+      "title": "2.4.1 데이터 입력하기",
+      "page": 94,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_94"
+    },
+    {
+      "part": "PART 02",
+      "title": "2.4.2 데이터 조회하기",
+      "page": 99,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_99"
+    },
+    {
+      "part": "PART 02",
+      "title": "2.5.1 데이터 입력하기",
+      "page": 108,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_108"
+    },
+    {
+      "part": "PART 02",
+      "title": "2.5.2 데이터 조회하기",
+      "page": 116,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_116"
     }
   ]
 }
