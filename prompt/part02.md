@@ -304,7 +304,7 @@ ORDER BY 연도;
 #### 112쪽, Claude를 활용한 구조 변환
 
 - 예제 파일: [part02/apartment_index.xlsx](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/part02/apartment_index.xlsx)
-- 
+
 ```
 업로드한 apartment_index.xlsx 파일에 있는 데이터를 다음 조건에 따라서 데이터베이스에 입력해주세요.
 - 1행에는 년-월이 지정돼 있고, A 칼럼에는 지역이 저장돼 있습니다. 해당 데이터를 기반으로 ‘년’, ‘월’, ‘지역’, ‘지수’로 구성된 테이블을 만들어야 합니다. 예를 들어서 2019,08,전국,75.111417 같은 형태로 테이블에 데이터가 저장돼야 합니다.
