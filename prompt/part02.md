@@ -86,7 +86,18 @@ uvx --version
 
 ---
 
+### 2.2.5 Claude Desktop 앱 설치하기
+
+#### 65쪽, Claude Desktop 다운로드 페이지
+
+- Claude Desktop 다운로드 페이지: [https://claude.ai/download](https://claude.ai/download)
+
+---
+
 ### 2.2.6 MCP 설정 파일에 환경 정보 추가하기
+
+- 예제 파일: [part02/book_sales_info.db](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/part02/book_sales_info.db)
+
 
 #### 69쪽, 윈도우용 설정 파일
 
@@ -122,20 +133,6 @@ uvx --version
     }
 }
 ```
-
----
-
-### 2.2.5 Claude Desktop 앱 설치하기
-
-#### 65쪽, Claude Desktop 다운로드 페이지
-
-- Claude Desktop 다운로드 페이지: [https://claude.ai/download](https://claude.ai/download)
-
----
-
-### 2.2.6 MCP 설정 파일에 환경 정보 추가하기
-
-- 예제 파일: [part02/book_sales_info.db](https://github.com/gaheeyoon/mcp-vibecoding/blob/main/part02/book_sales_info.db)
 
 ---
 
