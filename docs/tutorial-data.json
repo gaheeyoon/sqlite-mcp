@@ -113,6 +113,108 @@
       "title": "2.5.2 데이터 조회하기",
       "page": 116,
       "url": "https://www.youtube.com/embed/VIDEO_ID_116"
+    },
+    {
+      "part": "PART 03",
+      "title": "3.2.1 데이터베이스 만들기",
+      "page": 135,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_135"
+    },
+    {
+      "part": "PART 03",
+      "title": "3.2.2 자연어로 데이터 조회하기",
+      "page": 146,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_146"
+    },
+    {
+      "part": "PART 03",
+      "title": "3.3.1 도서(전체) 월별판매내역 챗봇 구성하기",
+      "page": 152,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_152A"
+    },
+    {
+      "part": "PART 03",
+      "title": "3.3.2 전체 도서 월별판매내역 챗봇 업그레이드하기",
+      "page": 158,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_158"
+    },
+    {
+      "part": "PART 03",
+      "title": "3.4.1 개별 도서 월별판매내역 챗봇 구성하기",
+      "page": 164,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_164"
+    },
+    {
+      "part": "PART 03",
+      "title": "3.4.2 개별 도서 월별판매내역 챗봇 업그레이드하기",
+      "page": 173,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_173"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.1.1 mail-temp 시트 소개",
+      "page": 190,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_190"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.1.2 royalty 시트 소개",
+      "page": 194,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_194"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.1.3 인세 자동 메일 발송 템플릿 사용해보기",
+      "page": 195,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_195"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.2.1 월별, ISBN별 판매 데이터 구하기",
+      "page": 205,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_205"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.2.2 판매 데이터를 피벗 형태로 바꾸기",
+      "page": 210,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_210"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.2.3 인세 지급 정보 포함하기",
+      "page": 216,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_216"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.3.1 데이터를 조회해서 구글 스프레드 문서 만들기",
+      "page": 223,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_223"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.3.2 메일 템플릿 만들기",
+      "page": 225,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_225"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.3.3 메일 자동 발송 프로그램 구현하기",
+      "page": 231,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_231"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.4.1 HTML 코드 수정하기",
+      "page": 243,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_243"
+    },
+    {
+      "part": "PART 04",
+      "title": "4.4.2 메일 발송 코드 수정하기",
+      "page": 249,
+      "url": "https://www.youtube.com/embed/VIDEO_ID_249"
     }
   ]
 }
