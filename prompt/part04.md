@@ -664,7 +664,7 @@ bank_num
     ...
     step16, SUBSTITUTE(step15, "tot_amt", $U2),
     step17, SUBSTITUTE(step16, "real_royalty", $W2),
-    SUBSTITUTE(step16, "bank_num", $G2)
+    SUBSTITUTE(step17, "bank_num", $G2)
 )
 ```
 
