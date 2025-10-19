@@ -96,30 +96,18 @@ SELECT
     bm.isbn,
     bm.title,
     bm.author,
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202501' THEN
-bs.sales_qty ELSE 0 END) AS '1월_판매수량',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202501' THEN
-bs.sales_amt ELSE 0 END) AS '1월_판매금액',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202502' THEN
-bs.sales_qty ELSE 0 END) AS '2월_판매수량',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202502' THEN
-bs.sales_amt ELSE 0 END) AS '2월_판매금액',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202503' THEN
-bs.sales_qty ELSE 0 END) AS '3월_판매수량',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202503' THEN
-bs.sales_amt ELSE 0 END) AS '3월_판매금액',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202504' THEN
-bs.sales_qty ELSE 0 END) AS '4월_판매수량',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202504' THEN
-bs.sales_amt ELSE 0 END) AS '4월_판매금액',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202505' THEN
-bs.sales_qty ELSE 0 END) AS '5월_판매수량',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202505' THEN
-bs.sales_amt ELSE 0 END) AS '5월_판매금액',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202506' THEN
-bs.sales_qty ELSE 0 END) AS '6월_판매수량',
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202506' THEN
-bs.sales_amt ELSE 0 END) AS '6월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202501' THEN bs.sales_qty ELSE 0 END) AS '1월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202501' THEN bs.sales_amt ELSE 0 END) AS '1월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202502' THEN bs.sales_qty ELSE 0 END) AS '2월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202502' THEN bs.sales_amt ELSE 0 END) AS '2월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202503' THEN bs.sales_qty ELSE 0 END) AS '3월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202503' THEN bs.sales_amt ELSE 0 END) AS '3월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202504' THEN bs.sales_qty ELSE 0 END) AS '4월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202504' THEN bs.sales_amt ELSE 0 END) AS '4월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202505' THEN bs.sales_qty ELSE 0 END) AS '5월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202505' THEN bs.sales_amt ELSE 0 END) AS '5월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202506' THEN bs.sales_qty ELSE 0 END) AS '6월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202506' THEN bs.sales_amt ELSE 0 END) AS '6월_판매금액',
     SUM(bs.sales_qty) AS '총판매수량',
     (bm.price * SUM(bs.sales_qty) * 0.1) AS '인세'
 FROM book_master bm
@@ -153,9 +141,18 @@ SELECT
     bm.isbn,
     bm.title,
     bm.author,
-    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202501' THEN bs.sales_qty ELSE 0 END) AS ‘1월_판매수량’,
-.
-.
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202501' THEN bs.sales_qty ELSE 0 END) AS '1월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202501' THEN bs.sales_amt ELSE 0 END) AS '1월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202502' THEN bs.sales_qty ELSE 0 END) AS '2월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202502' THEN bs.sales_amt ELSE 0 END) AS '2월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202503' THEN bs.sales_qty ELSE 0 END) AS '3월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202503' THEN bs.sales_amt ELSE 0 END) AS '3월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202504' THEN bs.sales_qty ELSE 0 END) AS '4월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202504' THEN bs.sales_amt ELSE 0 END) AS '4월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202505' THEN bs.sales_qty ELSE 0 END) AS '5월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202505' THEN bs.sales_amt ELSE 0 END) AS '5월_판매금액',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202506' THEN bs.sales_qty ELSE 0 END) AS '6월_판매수량',
+    SUM(CASE WHEN SUBSTR(bs.sales_date, 1, 6) = '202506' THEN bs.sales_amt ELSE 0 END) AS '6월_판매금액',
     SUM(bs.sales_qty) AS '총판매수량',
     (bm.price * SUM(bs.sales_qty) * 0.1) AS '인세'
 FROM book_master bm
@@ -313,98 +310,98 @@ bank_num
 #### 236쪽, HTML 템플릿
 ```
 <!DOCTYPE html>
-<html lang=""ko"">
+<html lang="ko">
 <head>
-    <meta charset=""UTF-8"">
-    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>전자책 인세 지급 안내</title>
 </head>
-<body style=""font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 20px; background-color: #f9f9f9;"">
-    <table style=""max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px;"">
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 20px; background-color: #f9f9f9;">
+    <table style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px;">
         <tr>
-            <td style=""padding: 30px;"">
-                <h2 style=""color: #2c3e50; margin-bottom: 20px;"">인세 지급 안내</h2>
+            <td style="padding: 30px;">
+                <h2 style="color: #2c3e50; margin-bottom: 20px;">인세 지급 안내</h2>
                 
-                <p style=""margin-bottom: 15px;"">안녕하세요. 위키북스 출판사 정산 담당자입니다.</p>
+                <p style="margin-bottom: 15px;">안녕하세요. 위키북스 출판사 정산 담당자입니다.</p>
                 
-                <p style=""margin-bottom: 15px;"">2025년 상반기 전자책 판매 내역을 정리했습니다.<br>
+                <p style="margin-bottom: 15px;">2025년 상반기 전자책 판매 내역을 정리했습니다.<br>
                 이번에 인세로 총 <strong>tot_royalty</strong> 원을 지급해드릴 수 있을 것 같은데요,<br>
                 아래 계좌번호가 맞는지 확인해주시면 인세를 송금해드리겠습니다.<br>
                 좋은 책을 집필해주셔서 다시 한번 감사드립니다.<br><br>
                 고맙습니다. :)</p>
                 
-                <h3 style=""color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;"">도서 기본 정보</h3>
-                <table style=""width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;"">
+                <h3 style="color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">도서 기본 정보</h3>
+                <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;">
                     <colgroup>
-                        <col style=""width: 30%;"">
-                        <col style=""width: 70%;"">
+                        <col style="width: 30%;">
+                        <col style="width: 70%;">
                     </colgroup>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">ISBN</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">ebook_isbn</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">ISBN</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">ebook_isbn</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">도서명</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">book_title</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">도서명</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">book_title</td>
                     </tr>
                 </table>
                 
-                <h3 style=""color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;"">2025 판매내역 (수량 / 금액)</h3>
-                <table style=""width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;"">
+                <h3 style="color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">2025 판매내역 (수량 / 금액)</h3>
+                <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;">
                     <colgroup>
-                        <col style=""width: 30%;"">
-                        <col style=""width: 70%;"">
+                        <col style="width: 30%;">
+                        <col style="width: 70%;">
                     </colgroup>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">1월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(1_qty 권 / 1_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">1월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(1_qty 권 / 1_amt 원)</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">2월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(2_qty 권 / 2_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">2월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(2_qty 권 / 2_amt 원)</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">3월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(3_qty 권 / 3_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">3월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(3_qty 권 / 3_amt 원)</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">4월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(4_qty 권 / 4_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">4월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(4_qty 권 / 4_amt 원)</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">5월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(5_qty 권 / 5_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">5월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(5_qty 권 / 5_amt 원)</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">6월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(6_qty 권 / 6_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">6월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(6_qty 권 / 6_amt 원)</td>
                     </tr>
                 </table>
                 
-                <h3 style=""color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;"">2025 정산내역</h3>
-                <table style=""width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;"">
+                <h3 style="color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">2025 정산내역</h3>
+                <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;">
                     <colgroup>
-                        <col style=""width: 30%;"">
-                        <col style=""width: 70%;"">
+                        <col style="width: 30%;">
+                        <col style="width: 70%;">
                     </colgroup>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">총 판매금액</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">tot_amt 원</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">총 판매금액</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">tot_amt 원</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">인세 지급액</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; color: #e74c3c; font-weight: bold;"">tot_royalty 원</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">인세 지급액</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; color: #e74c3c; font-weight: bold;">tot_royalty 원</td>
                     </tr>
                 </table>
                 
-                <h3 style=""color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;"">계좌 번호</h3>
-                <div style=""padding: 15px; background-color: #ecf0f1; border-radius: 5px; font-size: 14px;"">
+                <h3 style="color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">계좌 번호</h3>
+                <div style="padding: 15px; background-color: #ecf0f1; border-radius: 5px; font-size: 14px;">
                     bank_num
                 </div>
                 
-                <h3 style=""color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;"">참고 사항</h3>
-                <div style=""padding: 15px; background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px; color: #856404;"">
-                    <div style=""white-space: nowrap;"">* 인세 지급액은 총 판매금액의 25% 금액으로, 사업소득세 3.3%를 공제하고 계좌로 입금됩니다.</div>
+                <h3 style="color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">참고 사항</h3>
+                <div style="padding: 15px; background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px; color: #856404;">
+                    <div style="white-space: nowrap;">* 인세 지급액은 총 판매금액의 25% 금액으로, 사업소득세 3.3%를 공제하고 계좌로 입금됩니다.</div>
                     <div>* 여러 명의 저자가 있을 경우 요청한 비율에 따라서 인세가 분할 지급됩니다.</div>
                 </div>
 
@@ -536,98 +533,98 @@ bank_num
 
 <기존 HTML>
 <!DOCTYPE html>
-<html lang=""ko"">
+<html lang="ko">
 <head>
-    <meta charset=""UTF-8"">
-    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>전자책 인세 지급 안내</title>
 </head>
-<body style=""font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 20px; background-color: #f9f9f9;"">
-    <table style=""max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px;"">
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 20px; background-color: #f9f9f9;">
+    <table style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px;">
         <tr>
-            <td style=""padding: 30px;"">
-                <h2 style=""color: #2c3e50; margin-bottom: 20px;"">인세 지급 안내</h2>
+            <td style="padding: 30px;">
+                <h2 style="color: #2c3e50; margin-bottom: 20px;">인세 지급 안내</h2>
                 
-                <p style=""margin-bottom: 15px;"">안녕하세요. 위키북스 출판사 정산 담당자입니다.</p>
+                <p style="margin-bottom: 15px;">안녕하세요. 위키북스 출판사 정산 담당자입니다.</p>
                 
-                <p style=""margin-bottom: 15px;"">2025년 상반기 전자책 판매 내역을 정리했습니다.<br>
+                <p style="margin-bottom: 15px;">2025년 상반기 전자책 판매 내역을 정리했습니다.<br>
                 이번에 인세로 총 <strong>tot_royalty</strong> 원을 지급해드릴 수 있을 것 같은데요,<br>
                 아래 계좌번호가 맞는지 확인해주시면 인세를 송금해드리겠습니다.<br>
                 좋은 책을 집필해주셔서 다시 한번 감사드립니다.<br><br>
                 고맙습니다. :)</p>
                 
-                <h3 style=""color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;"">도서 기본 정보</h3>
-                <table style=""width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;"">
+                <h3 style="color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">도서 기본 정보</h3>
+                <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;">
                     <colgroup>
-                        <col style=""width: 30%;"">
-                        <col style=""width: 70%;"">
+                        <col style="width: 30%;">
+                        <col style="width: 70%;">
                     </colgroup>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">ISBN</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">ebook_isbn</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">ISBN</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">ebook_isbn</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">도서명</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">book_title</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">도서명</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">book_title</td>
                     </tr>
                 </table>
                 
-                <h3 style=""color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;"">2025 판매내역 (수량 / 금액)</h3>
-                <table style=""width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;"">
+                <h3 style="color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">2025 판매내역 (수량 / 금액)</h3>
+                <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;">
                     <colgroup>
-                        <col style=""width: 30%;"">
-                        <col style=""width: 70%;"">
+                        <col style="width: 30%;">
+                        <col style="width: 70%;">
                     </colgroup>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">1월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(1_qty 권 / 1_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">1월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(1_qty 권 / 1_amt 원)</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">2월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(2_qty 권 / 2_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">2월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(2_qty 권 / 2_amt 원)</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">3월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(3_qty 권 / 3_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">3월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(3_qty 권 / 3_amt 원)</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">4월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(4_qty 권 / 4_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">4월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(4_qty 권 / 4_amt 원)</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">5월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(5_qty 권 / 5_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">5월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(5_qty 권 / 5_amt 원)</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">6월</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">(6_qty 권 / 6_amt 원)</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">6월</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">(6_qty 권 / 6_amt 원)</td>
                     </tr>
                 </table>
                 
-                <h3 style=""color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;"">2025 정산내역</h3>
-                <table style=""width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;"">
+                <h3 style="color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">2025 정산내역</h3>
+                <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 25px;">
                     <colgroup>
-                        <col style=""width: 30%;"">
-                        <col style=""width: 70%;"">
+                        <col style="width: 30%;">
+                        <col style="width: 70%;">
                     </colgroup>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">총 판매금액</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd;"">tot_amt 원</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">총 판매금액</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd;">tot_amt 원</td>
                     </tr>
                     <tr>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;"">인세 지급액</td>
-                        <td style=""padding: 8px 12px; border: 1px solid #ddd; color: #e74c3c; font-weight: bold;"">tot_royalty 원</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold;">인세 지급액</td>
+                        <td style="padding: 8px 12px; border: 1px solid #ddd; color: #e74c3c; font-weight: bold;">tot_royalty 원</td>
                     </tr>
                 </table>
                 
-                <h3 style=""color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;"">계좌 번호</h3>
-                <div style=""padding: 15px; background-color: #ecf0f1; border-radius: 5px; font-size: 14px;"">
+                <h3 style="color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">계좌 번호</h3>
+                <div style="padding: 15px; background-color: #ecf0f1; border-radius: 5px; font-size: 14px;">
                     bank_num
                 </div>
                 
-                <h3 style=""color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;"">참고 사항</h3>
-                <div style=""padding: 15px; background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px; color: #856404;"">
-                    <div style=""white-space: nowrap;"">* 인세 지급액은 총 판매금액의 25% 금액으로, 사업소득세 3.3%를 공제하고 계좌로 입금됩니다.</div>
+                <h3 style="color: #34495e; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">참고 사항</h3>
+                <div style="padding: 15px; background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px; color: #856404;">
+                    <div style="white-space: nowrap;">* 인세 지급액은 총 판매금액의 25% 금액으로, 사업소득세 3.3%를 공제하고 계좌로 입금됩니다.</div>
                     <div>* 여러 명의 저자가 있을 경우 요청한 비율에 따라서 인세가 분할 지급됩니다.</div>
                 </div>
 
